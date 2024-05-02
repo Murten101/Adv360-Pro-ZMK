@@ -24,7 +24,7 @@
         power_run: power_run {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press &kp LALT
+            bindings = <&macro_press &kp LALT>
                 , <&macro_tap &kp SPACE>
                 , <&macro_release &kp LALT>
                 ;
