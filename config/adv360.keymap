@@ -9,20 +9,6 @@
         #include "macros.dtsi"
       #include "version.dtsi"
 
-        macro_ver: macro_ver {
-            compatible = "zmk,behavior-macro";
-            label = "macro_version";
-            #binding-cells = <0>;
-            bindings = <&kp RET>;
-        };
-
-        power_run: power_run {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LEFT_ALT &kp LS(SPACE)>;
-            label = "POWER_RUN";
-        };
-
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
@@ -35,6 +21,14 @@
     };
 
     macros {
+        power_run: power_run {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LALT
+                , <&macro_tap &kp SPACE>
+                , <&macro_release &kp LALT>
+                ;
+        };
     };
 
     keymap {
